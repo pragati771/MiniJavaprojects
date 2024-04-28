@@ -80,6 +80,12 @@ public class Tester {
 					System.out.println("really sorry you can add only good food please add another one");
 					break;
 				}
+			case 4:
+				n=size;
+				break;
+			default:
+				System.out.println("please enter valid choice dear!!");
+				break;
 				
 				
 			}
