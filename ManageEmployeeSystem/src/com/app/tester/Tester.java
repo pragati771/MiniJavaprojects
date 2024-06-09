@@ -33,7 +33,7 @@ public class Tester {
 			    case 2:
 			    	System.out.println("Please enter following details");
 			    	System.out.println("name,joining date, phone number,aadhaar number, sal");
-			    	Employee e1=validateFTEData(sc.next(),sc.next(),sc.next(),sc.next(),sc.next(),mymap);
+			    	Employee e1=validatePTEData(sc.next(),sc.next(),sc.next(),sc.next(),sc.next(),mymap);
 			    	mymap.put(e1.getId(), e1);
 			    	break;
 			    case 3:
@@ -42,7 +42,9 @@ public class Tester {
 			    	break;
 			    case 4:
 			    	System.out.println("please enter aadhar");
-			    	System.out.println(searchByAdhar(sc.next(),mymap));
+			    	Employee ee=searchByAdhar(sc.next(),mymap);
+			    	
+			    	System.out.println(ee);
 			    	break;
 			    case 5:
 			    	System.out.println(mymap.values());
@@ -77,3 +79,5 @@ public class Tester {
 	}
 
 }
+//   pragati 2020-09-09 1234567899 123123123123 3456
+//  pk 2023-09-09 1234123412 123456789012 567

@@ -17,7 +17,7 @@ public class Validations {
 	    } else if (aadhaar.length() != 12 || !aadhaar.matches("^\\d{12}$")) {
 	        throw new CustomException("Invalid Aadhaar: Aadhaar must be 12 digits");
 	    } else {
-	        return new Employee(name, LocalDate.parse(joining), number, aadhaar, Type.FTE, sal + "/month");
+	        return new Employee(name, LocalDate.parse(joining), number, aadhaar, Type.FTE, sal + "/hr");
 	    }
 	}
 
@@ -55,18 +55,14 @@ public class Validations {
 	
 	//search by aadhar
 	public static Employee searchByAdhar(String adhar,Map<Integer,Employee> mymap) throws CustomException {
-		if(mymap.containsValue(adhar)) {
-			for(Employee e:mymap.values()) {
-				if(e.getAadhaar().equals(adhar)) {
+		for(Employee e:mymap.values()) {
+			
+				if(e.getAadhaar().equals(adhar.trim())) {
+					
 					return e;
 				}
 			}
-			
-		}else {
-			throw new CustomException("invalid aadhar");
-		}
-		
-		return null;
+		throw new CustomException("Invalid Aadhar number");
 		
 	}
 	
